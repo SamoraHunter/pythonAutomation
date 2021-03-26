@@ -1,0 +1,22 @@
+from pynput import mouse
+
+
+def on_click(x, y, button, pressed):
+    if pressed:
+       
+        if(button == button.left):
+            print("Do left button press stuff..")
+        if(button == button.right):
+            print("Do right button press stuff..")       
+          
+        if(button == button.x1):
+            print("Do x1 button press stuff.. closest to you")
+            
+        if(button == button.x2):
+            print("Do x2 button press stuff..")
+            
+            
+        if(button == button.middle):
+            print("Do middle button press stuff..")
+with mouse.Listener(on_click=on_click) as listener:
+    listener.join()
